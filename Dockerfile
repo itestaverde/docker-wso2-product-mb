@@ -14,8 +14,9 @@ RUN echo "export JAVA_HOME=/usr/lib/jvm/java-7-oracle" >> ~/.bashrc
 
 ENV WSO2_SOFT_VER=3.0.0-RC1
 
+#https://github.com/itestaverde/product-mb/archive/v3.0.0-RC1.zip
 # copy zip from local folder to container
-RUN wget -P /opt --user-agent="testuser" --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download" http://product-dist.wso2.com/products/message-broker/${WSO2_SOFT_VER}/wso2mb-${WSO2_SOFT_VER}.zip && \
+RUN wget -P /opt https://github.com/itestaverde/product-mb/archive/v${WSO2_SOFT_VER}.zip && \
 	yum update -y && \
 	yum install -y unzip && \
     unzip /opt/wso2mb-${WSO2_SOFT_VER}.zip -d /opt && \
