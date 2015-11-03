@@ -1,6 +1,5 @@
 # docker-wso2-product-mb
 ==========================
-
 Docker image to install and run WSO2 Message Broker.
 
 The dockerfile will:
